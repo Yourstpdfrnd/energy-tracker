@@ -1,7 +1,7 @@
 <!-- Компонент графика -->
 <template>
   <div class="energy-dashboard">
-    <div class="energy-dashboard row" v-if="logs.value.length === 0">
+    <div class="energy-dashboard row" v-if="logs.length === 0">
       График пока пуст. Заполни свою первую запись
       <img class="energy-dashboard__icon" :src="icons.chart" alt="">
     </div>
