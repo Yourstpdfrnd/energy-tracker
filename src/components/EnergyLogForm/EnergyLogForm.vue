@@ -99,7 +99,7 @@ import { useEnergyLogStore } from '@/stores/energyLogStore'
 import { useTaskBoardStore } from '@/stores/taskBoardStore'
 import EnergyFactors from '@/components/EnergyFactors/EnergyFactors.vue'
 import EnergyResult from '@/components/EnergyResult/EnergyResult.vue'
-import { categories as getCategories } from '@/data/tasksCategories'
+import { categories } from '@/data/tasksCategories'
 
 import { getTasksByFocusAndDate } from '@/api/tasksApi'
 import { useUserStore } from '@/stores/useUserStore'
@@ -119,15 +119,13 @@ const { selectedCategories, tasksByDate, selectedDate, customListLabels } = stor
 // @ts-ignore
 window.logStore = useEnergyLogStore()
 
-const categories = computed(() => getCategories(t))
-
 
 // Название категории  
 const getLabel = (id: string) => {
   if (customListLabels.value[id]) {
     return customListLabels.value[id]
   }
-  const cat = categories.value.find(c => c.id === id)
+  const cat = categories.find((c) => c.id === id)
   return cat ? cat.label : id
 }
 
