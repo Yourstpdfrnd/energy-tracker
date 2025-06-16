@@ -1,7 +1,7 @@
 <template>
   <div class="plan-page">
     <div class="main-inner">
-      <h1 class="plan-page__title">Задачи дня </h1>
+      <h1 class="plan-page__title">Задачи дня</h1>
       <p v-if="step === 1" class="plan-page__subtitle">Выбери, на что хочешь направить энергию сегодня</p>
 
       <!-- Шаг 1: Выбор фокусов -->
@@ -81,7 +81,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 
-import { categories as getCategories } from '@/data/tasksCategories'
+import { categories } from '@/data/tasksCategories'
 import { focusColorMap } from '@/data/focusColors'
 
 import { useTaskBoardStore } from '@/stores/taskBoardStore'
@@ -100,7 +100,6 @@ const store = useTaskBoardStore()
 const { selectedCategories } = storeToRefs(store)
 const { toggleCategory } = store
 
-const categories = computed(() => getCategories())
 
 const isLoadingFocuses = ref(true)
 const autoLoad = false 
