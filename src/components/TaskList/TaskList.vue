@@ -36,7 +36,7 @@
 
     <div class="task-list__actions">
       <el-button class="task-button" size="small" type="primary" @click="addTask">
-        {{ t('tasks.add') }}
+        Добавить
       </el-button>
     </div>
   </div>

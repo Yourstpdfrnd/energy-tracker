@@ -1,15 +1,13 @@
 <template>
   <div class="settings-page">
     <el-empty
-      :description="t('settings.inProgress')"
+      description="⚙️ Страница в разработке. Загляни позже!"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 </script>
 
 <style scoped>

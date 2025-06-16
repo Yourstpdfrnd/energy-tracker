@@ -1,42 +1,42 @@
 export const categories = (t: (key: string) => string) => [
   {
     id: 'work',
-    label: t('tasks.work'),
+    label: 'Работа',
     icon: new URL('@/assets/icons/plan/work.png', import.meta.url).href,
   },
   {
     id: 'health',
-    label: t('tasks.health'),
+    label: 'Здоровье',
     icon: new URL('@/assets/icons/plan/health.png', import.meta.url).href,
   },
   {
     id: 'body',
-    label: t('tasks.body'),
+    label: 'Спорт',
     icon: new URL('@/assets/icons/plan/body.png', import.meta.url).href,
   },
   {
     id: 'home',
-    label: t('tasks.home'),
+    label: 'Дом / Уют',
     icon: new URL('@/assets/icons/plan/home.png', import.meta.url).href,
   },
   {
     id: 'spirit',
-    label: t('tasks.spirit'),
+    label: 'Дух',
     icon: new URL('@/assets/icons/plan/spirit.png', import.meta.url).href,
   },
   {
     id: 'creativity',
-    label: t('tasks.creativity'),
+    label: 'Творчество',
     icon: new URL('@/assets/icons/plan/creativity.png', import.meta.url).href,
   },
   {
     id: 'study',
-    label: t('tasks.study'),
+    label: 'Изучение нового',
     icon: new URL('@/assets/icons/plan/study.png', import.meta.url).href,
   },
     {
     id: 'free',
-    label: t('tasks.free'),
+    label: 'Разное',
     icon: new URL('@/assets/icons/plan/free.png', import.meta.url).href,
   },
 ]

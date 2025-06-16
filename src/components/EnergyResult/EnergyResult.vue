@@ -9,7 +9,7 @@
       class="energy-bar"
     />
     <p class="label">
-      {{ energyInfo.label }} {{ t('energy.label') }} ({{ score }})
+      {{ energyInfo.label }} Уровень энергии ({{ score }})
     </p>
   </div>
 </template>
@@ -28,9 +28,9 @@ const props = defineProps<{ score: number }>()
 
 // Возвращает метку и цвет для текущего уровня энергии
 const getEnergyLevelLabel = (score: number) => {
-  if (score <= -2) return { label: t('energy.low'), color: '#f56c6c' }
-  if (score <= 2) return { label: t('energy.medium'), color: '#e6a23c' }
-  return { label: t('energy.high'), color: '#67c23a' }
+  if (score <= -2) return { label: 'Низкий', color: '#f56c6c' }
+  if (score <= 2) return { label: 'Средний', color: '#e6a23c' }
+  return { label: 'Высокий', color: '#67c23a' }
 }
 
 const energyInfo = computed(() => getEnergyLevelLabel(props.score))

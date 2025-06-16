@@ -1,9 +1,8 @@
 <template>
   <div class="plan-page">
     <div class="main-inner">
-      <h1 class="plan-page__title">{{ t('plan.title') }}</h1>
-      <h1 class="plan-page__title" style="color: red">Задачи дня</h1>
-      <p v-if="step === 1" class="plan-page__subtitle">{{ t('plan.subtitle') }}</p>
+      <h1 class="plan-page__title">Задачи дня </h1>
+      <p v-if="step === 1" class="plan-page__subtitle">Выбери, на что хочешь направить энергию сегодня</p>
 
       <!-- Шаг 1: Выбор фокусов -->
       <div v-if="step === 1">
@@ -25,7 +24,7 @@
             :disabled="!selectedCategories.length"
             @click="handleSaveFocuses"
           >
-            {{ t('tasks.next') }}
+           Далее
           </el-button>
         </div>
       </div>
@@ -33,7 +32,7 @@
       <!-- Шаг 2: подтверждение -->
       <div v-else-if="step === 2">
         <div class="plan-page__focuses mt-4">
-          <h3>{{ t('tasks.selected') }}</h3>
+          <h3>Выбранные фокусы:</h3>
           <div class="selected-categories">
             <div
               v-for="category in categoriesFiltered"
@@ -47,10 +46,10 @@
           </div>
           <div class="plan-page__focuses-actions">
             <el-button class="nav-button-back" type="primary" @click="step--">
-              {{ t('tasks.back') }}
+             Назад
             </el-button>
             <el-button class="nav-button" type="primary" @click="step++">
-              {{ t('tasks.next') }}
+             Далее
             </el-button>
           </div>
         </div>
@@ -61,7 +60,7 @@
         <TaskBoard />
         <div class="plan-page__focuses-actions">
           <el-button type="primary" class="nav-button-back" @click="step--">
-            {{ t('tasks.back') }}
+            Назад
           </el-button>
           <el-button
             class="nav-button"
@@ -69,7 +68,7 @@
             @click="goToTracker"
             :disabled="!hasTasks"
           >
-            {{ t('tasks.tracker') }}
+           Перейти в трекер энергии
           </el-button>
         </div>
       </div>
@@ -81,7 +80,6 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { useI18n } from 'vue-i18n'
 
 import { categories as getCategories } from '@/data/tasksCategories'
 import { focusColorMap } from '@/data/focusColors'
@@ -96,14 +94,13 @@ import TaskBoard from '@/components/TaskBoard/TaskBoard.vue'
 
 const route = useRoute()
 const router = useRouter();
-const { t } = useI18n()
 
 // стор
 const store = useTaskBoardStore()
 const { selectedCategories } = storeToRefs(store)
 const { toggleCategory } = store
 
-const categories = computed(() => getCategories(t))
+const categories = computed(() => getCategories())
 
 const isLoadingFocuses = ref(true)
 const autoLoad = false 
@@ -127,7 +124,6 @@ const handleSaveFocuses = async () => {
   step.value++
 }
 
-
 const handleToggle = (id: string) => {
   toggleCategory(id)
 }
@@ -141,8 +137,6 @@ const categoriesFiltered = computed(() =>
   categories.value.filter(cat => selectedCategories.value.includes(cat.id))
 )
 const { tasksByDate, selectedDate } = storeToRefs(store)
-
-
 
 const hasTasks = computed(() => {
   const date = selectedDate.value

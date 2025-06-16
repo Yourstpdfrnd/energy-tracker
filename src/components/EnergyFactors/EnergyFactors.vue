@@ -6,7 +6,7 @@
         <div class="column-inner">
           <h4 class="energy-factors__title">
             <img class="energy-factors__icon" :src="icons.positive" alt="">
-             {{ t('form.positive')}}</h4>
+            Позитивные</h4>
           <el-checkbox
             v-for="item in store.positiveFactors"
             :key="item.value"

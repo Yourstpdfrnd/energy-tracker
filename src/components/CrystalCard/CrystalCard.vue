@@ -2,7 +2,7 @@
 <template>
   <el-card class="crystal-card">
     <div class="crystal-card__title row">
-      <img class="crystal-card__icon" :src="icons.crystal" alt=""> {{ t('crystalsTitle') }}
+      <img class="crystal-card__icon" :src="icons.crystal" alt=""> Рекомендованный кристалл
     </div>
 
     <div class="crystal-card__content">
@@ -29,6 +29,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { icons } from '@/data/icons'
+import { crystals} from '@/data/crystals'
 
 const props = defineProps<{
   currentPhase: string
@@ -37,7 +38,7 @@ const props = defineProps<{
 const { t } = useI18n()
 
 const crystal = computed(() => {
-  const data = t(`crystals.${props.currentPhase}`)
+  const data = crystals[props.currentPhase]
 
   if (!data || typeof data !== 'object') {
     return {

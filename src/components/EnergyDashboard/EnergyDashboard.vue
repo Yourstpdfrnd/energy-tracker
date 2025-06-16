@@ -18,7 +18,6 @@ import VChart from 'vue-echarts'
 import { LineChart } from 'echarts/charts'
 import { TitleComponent, TooltipComponent, GridComponent, LegendComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
-import { useI18n } from 'vue-i18n'
 
 import { icons } from '@/data/icons'
 import { getAllEnergyLogs } from '@/api/energyLogApi'
@@ -26,7 +25,6 @@ import { formatLogDate } from '@/utils/format'
 
 import { useUserStore } from '@/stores/useUserStore'
 
-const { t } = useI18n()
 
 use([
   LineChart,

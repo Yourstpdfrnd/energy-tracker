@@ -1,7 +1,7 @@
 <!-- Компонент добавления кастомной колонки -->
 <template>
   <div class="add-column" @click="open = true" v-if="!open">
-    +  {{ t('column') }} + 
+    +  Добавить список + 
   </div>
 
   <div class="add-column-form" v-else>
@@ -22,8 +22,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useTaskBoardStore } from '@/stores/taskBoardStore'
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
 
 const open = ref(false)
 const newTitle = ref('')

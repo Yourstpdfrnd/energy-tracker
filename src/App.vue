@@ -5,19 +5,20 @@
         
         <div v-if="$route.path !== '/'" class="top-bar">
         <el-menu mode="horizontal" router :default-active="$route.path" class="top-bar-menu">
-          <el-menu-item index="/plan">{{ t('menu.plan') }}</el-menu-item>
-          <el-menu-item index="/log">{{ t('menu.log') }}</el-menu-item>
-          <el-menu-item index="/settings">{{ t('menu.settings') }}</el-menu-item>
+          <el-menu-item index="/plan">Задачи дня</el-menu-item>
+          <el-menu-item index="/log">Трекер энергии</el-menu-item>
+          <el-menu-item index="/settings">Настройки</el-menu-item>
         </el-menu>
 
           <div class="top-bar-right">
             <span v-if="userStore.name" class="user-name">
               Привет, {{ userStore.name }} !🌞
             </span>
-            <el-select v-model="locale" class="locale-switch" size="small" @change="switchLocale">
+            <!-- <el-select v-model="locale" class="locale-switch" size="small" @change="switchLocale">
               <el-option label="RU" value="ru" />
               <el-option label="EN" value="en" />
-            </el-select>
+            </el-select> -->
+            <!-- <button class="start-btn">Выход</button> -->
           </div>
         </div>
 

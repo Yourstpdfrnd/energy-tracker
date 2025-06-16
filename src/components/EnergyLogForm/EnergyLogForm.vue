@@ -1,7 +1,7 @@
 <template>
   <el-card class="energy-log-form" shadow="always">
     <h2 class="row"><img class="form-icon-top" :src="icons.vector" alt="">Energy Tracker</h2>
-    <p class="row subtitle">{{ t('form.title')}} 
+    <p class="row subtitle">Узнай свой уровень энергии сегодня 
       <img class="form-icon" :src="icons.energy" alt="">
     </p>
 
@@ -9,51 +9,52 @@
     <div class="form-section">
       <h3 class="row">
         <img class="form-icon" :src="icons.goal" alt="">
-        {{ t('form.focuses')}}</h3>
+       Твой фокус на сегодня:
+      </h3>
     
-      <strong>{{ t('form.selected')}}</strong>
+      <strong>Выбрано:</strong>
       <div v-for="cat in selectedCategories" :key="cat" class="focus-tag">{{ getLabel(cat) }}</div>
   
       <p class="form-section-total row">
-        <img class="form-icon" :src="icons.done" alt=""> {{ t('form.completed')}} {{ completedTasks }} из {{ totalTasks }} ({{ completionPercent }}%)
+        <img class="form-icon" :src="icons.done" alt=""> Выполнено задач: {{ completedTasks }} из {{ totalTasks }} ({{ completionPercent }}%)
       </p>
       
       <p class="row" v-if="completionPercent >= 70">
         <img class="form-icon" :src="icons.top" alt="">
-        {{ t('form.one')}}
+       Отличный фокус! Это дало энергию
       </p>
 
       <p class="row" v-else-if="completionPercent > 0">
         <img class="form-icon" :src="icons.step" alt=""> 
-        {{ t('form.two')}}
+        Первые шаги сделаны, продолжай!
       </p>
 
       <p class="row" v-else><img class="form-icon" :src="icons.pin" alt=""> 
-        {{ t('form.three')}}
+       Ты запланировал, но пока не отметил выполнение задач
       </p>
 
     </div>
 
     <!-- Дата -->
     <div class="form-section">
-      <h3>{{ t('form.data')}}</h3>
+      <h3>Данные загружены:</h3>
       <p>{{ selectedDate }}</p>
     </div>
 
     <!-- Уровень энергии -->
     <div class="form-section">
-      <div class="energy-text__title">{{ t('form.level')}}</div>
+      <div class="energy-text__title">Твой уровень энергии:</div>
       <EnergyResult :score="energyLevel" />
-      <p class="energy-text__tip" v-if="energyAdvice">{{ t('form.advice')}} </p>
+      <p class="energy-text__tip" v-if="energyAdvice">Сделай паузу и подыши свежим воздухом </p>
     </div>
 
     <!-- Причины -->
     <div class="form-section">
-      <div class="energy-text__title">{{ t('form.additional')}}</div>
+      <div class="energy-text__title">Дополнительные факторы, повлиявшие на твой день</div>
       <EnergyFactors v-model="modelValue" />
       <div class="form-section">
       <el-button @click="showCustom = !showCustom">
-        {{ showCustom ? t('form.hideCustomFactor') : t('form.addCustomFactor') }}
+        {{ showCustom ? 'Скрыть свой фактор': 'Добавить свой фактор' }}
       </el-button>
 
       <div v-if="showCustom" class="custom-reason-block">
@@ -64,11 +65,11 @@
         />
 
         <el-radio-group v-model="customEmoji">
-          <el-radio-button label="positive">{{ t('form.positive')}}</el-radio-button>
-          <el-radio-button label="negative">{{ t('form.negative')}}</el-radio-button>
+          <el-radio-button label="positive">Позитивные</el-radio-button>
+          <el-radio-button label="negative">Негативные</el-radio-button>
         </el-radio-group>
 
-        <el-button class="el-custom" type="success" @click="addCustomReason">{{ t('form.add')}}</el-button>
+        <el-button class="el-custom" type="success" @click="addCustomReason">Добавить</el-button>
       </div>
     </div>
     </div>
@@ -79,9 +80,9 @@
     </div>
 
     <div class="form-section button-group">
-      <el-button type="primary" class="nav-button-back" @click="goBackToTasks">{{ t('form.back')}}</el-button>
-      <el-button type="primary" class="nav-button" @click="handleSubmit" :disabled="!isFormValid">{{ t('form.save')}}</el-button>
-      <el-button type="warning" class="nav-button-done" @click="finishDay">{{ t('form.finish')}}</el-button>
+      <el-button type="primary" class="nav-button-back" @click="goBackToTasks">Назад к задачам</el-button>
+      <el-button type="primary" class="nav-button" @click="handleSubmit" :disabled="!isFormValid">Сохранить</el-button>
+      <el-button type="warning" class="nav-button-done" @click="finishDay">Завершить день</el-button>
     </div>
   </el-card>
 </template>
