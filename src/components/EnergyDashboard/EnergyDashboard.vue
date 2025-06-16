@@ -75,7 +75,7 @@ const energyValues = computed(() =>
 
 const chartOptions = computed(() => ({
   title: {
-    text: t('chart.energyTitle'),
+    text: 'Уровень энергии по дням',
     left: 'center'
   },
   tooltip: {

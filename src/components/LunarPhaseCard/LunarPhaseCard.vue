@@ -6,10 +6,10 @@
       <img :src="moonImageUrl" alt="Фаза луны" class="lunar-phase-card__image" />
       <div class="lunar-phase-card__text">
         <div class="lunar-phase-card__name">
-          {{ t(`moonPhases.${phaseName}`) }}
+          {{ moonPhases[phaseName] }}
         </div>
         <div class="lunar-phase-card__note">
-          {{ t(`moonTips.${phaseName}`) }}
+             {{ moonTips[phaseName] }}
         </div>
       </div>
     </div>
@@ -18,14 +18,13 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { moonPhases, moonTips } from '@/data/moonPhases'
 import { fetchMoonPhase } from '@/services/lunarService'
 
 const moonImageUrl = ref('')
 const phaseName = ref('')
 const loading = ref(true)
 const error = ref('')
-const { t } = useI18n()
 
 onMounted(async () => {
   try {

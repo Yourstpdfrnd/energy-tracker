@@ -28,7 +28,7 @@
 
       <div class="energy-factors__column">
         <div class="column-inner">
-          <h4 class="energy-factors__title"><img class="energy-factors__icon" :src="icons.negative" alt=""> {{ t('form.negative')}}</h4>
+          <h4 class="energy-factors__title"><img class="energy-factors__icon" :src="icons.negative" alt=""> Негативные</h4>
           <el-checkbox
             v-for="item in store.negativeFactors"
             :key="item.value"
@@ -55,19 +55,28 @@
 import { computed } from 'vue'
 
 import { Close } from '@element-plus/icons-vue'
-import { useI18n } from 'vue-i18n'
 
 import { useEnergyFactorsStore } from '@/stores/energyFactors'
 import { icons } from '@/data/icons'
 
-const { t } = useI18n()
 
 const props = defineProps<{ modelValue: string[] }>()
 const emit = defineEmits(['update:modelValue'])
 
 const store = useEnergyFactorsStore()
 
-const getLabel = (value: string) => t(`factors.${value}`)
+const factors: Record<string, string> = {
+  sleep: "Недосып",
+  bad_diet: "Плохое питание",
+  stress: "Стресс",
+  exercise: "Физическая активность",
+  caffeine: "Много кофеина",
+  screen_time: "Много экрана",
+  fresh_air: "Прогулка на свежем воздухе",
+  relaxation: "Медитация / отдых"
+}
+
+const getLabel = (value: string) => factors[value] || value
 
 const modelValue = computed({
   get: () => props.modelValue,
