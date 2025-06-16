@@ -1,8 +1,8 @@
 <template>
   <div class="plan-page">
     <div class="main-inner">
-      <h1 class="plan-page__title">{{ tm('plan.title') }}</h1>
-      <p v-if="step === 1" class="plan-page__subtitle">{{ tm('plan.subtitle') }}</p>
+      <h1 class="plan-page__title">{{ t('plan.title') }}</h1>
+      <p v-if="step === 1" class="plan-page__subtitle">{{ t('plan.subtitle') }}</p>
 
       <!-- Шаг 1: Выбор фокусов -->
       <div v-if="step === 1">
@@ -95,7 +95,7 @@ import TaskBoard from '@/components/TaskBoard/TaskBoard.vue'
 
 const route = useRoute()
 const router = useRouter();
-const { tm, t } = useI18n()
+const { t } = useI18n()
 
 // стор
 const store = useTaskBoardStore()

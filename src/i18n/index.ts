@@ -11,3 +11,6 @@ export const i18n = createI18n({
     en,
   },
 })
+
+console.log('RU:', ru)
+console.log('EN:', en)

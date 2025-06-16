@@ -2,7 +2,7 @@
 <template>
   <el-card class="crystal-card">
     <div class="crystal-card__title row">
-      <img class="crystal-card__icon" :src="icons.crystal" alt=""> {{ tm('crystalsTitle') }}
+      <img class="crystal-card__icon" :src="icons.crystal" alt=""> {{ t('crystalsTitle') }}
     </div>
 
     <div class="crystal-card__content">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="crystal-card__usage">
-      <strong>{{ tm('howToUse') }}:</strong><br />
+      <strong>{{ t('howToUse') }}:</strong><br />
       {{ crystal.howToUse }}
     </div>
   </el-card>
@@ -34,10 +34,10 @@ const props = defineProps<{
   currentPhase: string
 }>()
 
-const { tm } = useI18n()
+const { t } = useI18n()
 
 const crystal = computed(() => {
-  const data = tm(`crystals.${props.currentPhase}`)
+  const data = t(`crystals.${props.currentPhase}`)
 
   if (!data || typeof data !== 'object') {
     return {
