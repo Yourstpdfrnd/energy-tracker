@@ -2,6 +2,7 @@
   <div class="plan-page">
     <div class="main-inner">
       <h1 class="plan-page__title">{{ t('plan.title') }}</h1>
+      <h1 class="plan-page__title" style="color: red">Задачи дня</h1>
       <p v-if="step === 1" class="plan-page__subtitle">{{ t('plan.subtitle') }}</p>
 
       <!-- Шаг 1: Выбор фокусов -->
