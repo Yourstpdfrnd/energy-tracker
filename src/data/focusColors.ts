@@ -1,4 +1,4 @@
-export const focusColorMap = {
+export const focusColorMap: Record<string, string> = {
   work: '#ffeab6',
   health: '#d3f6c2',
   body: '#f7d0ff',

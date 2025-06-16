@@ -39,7 +39,8 @@ import { VideoPlay, VideoPause, Refresh, Headset } from '@element-plus/icons-vue
 const totalTime = ref(600) // 10 минут
 const timeLeft = ref(totalTime.value)
 const isRunning = ref(false)
-let interval: number | null = null
+
+let interval: ReturnType<typeof setInterval> | null = null
 
 const formattedTime = computed(() => {
   const minutes = Math.floor(timeLeft.value / 60)
@@ -61,7 +62,6 @@ const toggleTimer = () => {
         clearInterval(interval!)
         interval = null
         isRunning.value = false
-        // можно воспроизвести звук окончания
       }
     }, 1000)
   }

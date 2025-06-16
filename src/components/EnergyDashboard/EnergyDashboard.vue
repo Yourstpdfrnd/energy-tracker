@@ -1,7 +1,7 @@
 <!-- Компонент графика -->
 <template>
   <div class="energy-dashboard">
-    <div class="energy-dashboard row" v-if="logs.length === 0">
+    <div class="energy-dashboard row" v-if="logs.value.length === 0">
       График пока пуст. Заполни свою первую запись
       <img class="energy-dashboard__icon" :src="icons.chart" alt="">
     </div>
@@ -10,13 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch, watchEffect } from 'vue'
+import { ref, computed, watch, watchEffect } from 'vue'
 
 import dayjs from 'dayjs'
 import { use } from 'echarts/core'
 import VChart from 'vue-echarts'
 import { LineChart } from 'echarts/charts'
-import { TitleComponent, TooltipComponent, GridComponent, LegendComponent} from 'echarts/components'
+import { TitleComponent, TooltipComponent, GridComponent, LegendComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
 import { useI18n } from 'vue-i18n'
 
@@ -38,12 +38,20 @@ use([
 ])
 
 const chartKey = ref(0)
-const logs = ref([])
+
+interface EnergyLog {
+  id?: string
+  date: string
+  score: number
+  comment?: string
+}
+
+const logs = ref<EnergyLog[]>([])
 
 const userStore = useUserStore()
 const userId = userStore.userId
 
-const enhancedLogs = computed(() => {
+const enhancedLogs = computed<EnergyLog[]>(() => {
   const sorted = logs.value
     .filter(log => log.date && typeof log.score === 'number')
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
@@ -54,7 +62,7 @@ const enhancedLogs = computed(() => {
   const dayBefore = dayjs(firstDate).subtract(1, 'day').format('YYYY-MM-DD')
 
   return [
-    { date: dayBefore, score: 0 }, 
+    { date: dayBefore, score: 0 },
     ...sorted
   ]
 })
@@ -108,11 +116,11 @@ watch(enhancedLogs, () => {
 watchEffect(async () => {
   if (!userId) return
   const result = await getAllEnergyLogs(userId)
-  logs.value = result
+  logs.value = result as EnergyLog[]
 })
 </script>
-
 
 <style scoped>
 @import './EnergyDashboard.scss';
 </style>
+
