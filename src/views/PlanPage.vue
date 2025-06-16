@@ -128,13 +128,14 @@ const handleToggle = (id: string) => {
 }
 
 const getLabel = (id: string) => {
-  const item = categories.value.find(cat => cat.id === id)
+  const item = categories.find((cat) => cat.id === id)
   return item ? item.label : id
 }
 
 const categoriesFiltered = computed(() =>
-  categories.value.filter(cat => selectedCategories.value.includes(cat.id))
+  categories.filter((cat) => selectedCategories.value.includes(cat.id))
 )
+
 const { tasksByDate, selectedDate } = storeToRefs(store)
 
 const hasTasks = computed(() => {
