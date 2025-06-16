@@ -40,16 +40,18 @@ yarn dev
 ## 📸 Скриншоты
 
 ### 1. Первый экран — приветствие и ввод имени
-![Стартовый экран](./screenshots/Screenshot_1.png)
+![Screenshot_1](https://github.com/user-attachments/assets/20922698-fe14-4f1a-8a09-d549eeb9d99e)
 
 ### 2. Выбор фокусов дня
-![Выбор фокусов](./screenshots/Screenshot_2.png)
+![Screenshot_2](https://github.com/user-attachments/assets/2c854d97-841d-4792-8ca1-0e6258461d36)
 
 ### 3. Доска задач на день
-![Доска задач](./screenshots/Screenshot_3.png)
+![Screenshot_3](https://github.com/user-attachments/assets/2845dc2d-0974-4a7f-944a-bffbca1d870e)
+
 
 ### 4. Трекер энергии и анализ дня
-![Трекер энергии](./screenshots/Screenshot_4.png)
+![Screenshot_4](https://github.com/user-attachments/assets/f7e2ea41-70b0-48e7-a656-39d7d3cf49ea)
+
 
 *Когда вы заполните свой первый день, появится график энергии, а также рекомендации по лунному циклу и кристаллам.*
 
