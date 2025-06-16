@@ -1,0 +1,45 @@
+.task-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  gap: 8px;
+  position: relative;
+}
+
+.task-content {
+  flex: 1;
+  cursor: text;
+}
+
+.task-edit-input {
+  width: 100%;
+  border: none;
+  background: #f7f7f7;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.task-edit-input:focus {
+  outline: 1px solid #409eff;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: #888;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.menu-icon:hover {
+  background: #f2f2f2;
+}

@@ -1,0 +1,53 @@
+.crystal-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 16px;
+  
+    &__title {
+      font-weight: bold;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    &__content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+  
+    &__image {
+      width: 120px;
+      height: 120px;
+    }
+
+    &__icon {
+      width: 22px;
+    }
+  
+    &__text {
+      flex: 1;
+      max-width: 400px;
+    }
+  
+    &__name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  
+    &__description {
+      font-size: 14px;
+      color: var(--el-text-color-secondary);
+    }
+  
+    &__usage {
+      font-size: 14px;
+      color: var(--el-text-color-secondary);
+      max-width: 400px;
+    }
+  }

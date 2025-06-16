@@ -1,0 +1,66 @@
+.energy-log-form {
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+  }
+  .subtitle {
+    margin-bottom: 24px;
+    color: var(--text-color);
+  }
+
+  .form-icon {
+    width: 30px;
+    &-top {
+      width: 40px;
+    }
+  }
+
+  
+
+  .form-section {
+    margin-bottom: 20px;
+    &-total {
+      padding: 16px 0;
+    }
+  }
+  
+  .energy-text__title {
+    margin-bottom: 12px;
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  .energy-text__tip {
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .emoji-select {
+    padding: 12px 0;
+  }
+
+  .energy-factors__title {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .custom-reason-input ::v-deep(.el-input__inner) {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+  }
+
+  .custom-reason-input {
+    margin: 12px 0;
+  }
+  
+  textarea,
+  input {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+  }
+  
+ 
+  
+  
