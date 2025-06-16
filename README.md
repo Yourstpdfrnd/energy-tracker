@@ -36,7 +36,7 @@ cd energy-tracker
 yarn
 yarn dev
 
-
+![Screenshot_1](https://github.com/user-attachments/assets/20922698-fe14-4f1a-8a09-d549eeb9d99e)
 ## 📸 Скриншоты
 
 ### 1. Первый экран — приветствие и ввод имени
