@@ -42,8 +42,6 @@ yarn dev
 ### 1. Первый экран — приветствие и ввод имени
 ![Screenshot_1](https://github.com/user-attachments/assets/20922698-fe14-4f1a-8a09-d549eeb9d99e)
 
-![screencapture-localhost-8081-2021-06-29-22_41_41](https://user-images.githubusercontent.com/65391216/123932882-8be28000-d99a-11eb-839c-143c9405c853.png)
-
 ### 2. Выбор фокусов дня
 ![Screenshot_2](https://github.com/user-attachments/assets/2c854d97-841d-4792-8ca1-0e6258461d36)
 
