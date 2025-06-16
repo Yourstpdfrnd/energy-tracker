@@ -29,7 +29,6 @@
 
 ## 🛠️ Установка и запуск
 
-```bash
 git clone 
 cd energy-tracker
 yarn
