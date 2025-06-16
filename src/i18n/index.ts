@@ -7,9 +7,10 @@ export const i18n = createI18n({
   locale: 'ru',
   fallbackLocale: 'en',
   messages: {
-    ru,
-    en,
-  },
+    ru: {
+      plan: { title: 'Тестовый перевод' }
+    }
+  }
 })
 
 console.log('RU:', ru)
