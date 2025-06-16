@@ -30,6 +30,7 @@
 <script setup lang="ts">
 import { ElConfigProvider } from 'element-plus'
 import { useI18n } from 'vue-i18n'
+import { watchEffect } from 'vue'
 
 import { useUserStore } from '@/stores/useUserStore'
 
@@ -39,6 +40,11 @@ const userStore = useUserStore()
 const switchLocale = (val: string) => {
   locale.value = val
 }
+
+watchEffect(() => {
+  console.log('ACTIVE LOCALE:', locale.value)
+  console.log('t', t('plan.title'))
+})
 </script>
 
 
