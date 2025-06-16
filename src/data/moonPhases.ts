@@ -1,4 +1,4 @@
-export const moonPhases = {
+export const moonPhases: Record<string, string> = {
   "New Moon": "Новолуние",
   "Waxing Crescent": "Растущая луна (1-я фаза)",
   "First Quarter": "Первая четверть",
@@ -9,7 +9,7 @@ export const moonPhases = {
   "Waning Crescent": "Убывающая луна (4-я фаза)"
 }
 
-export const moonTips = {
+export const moonTips: Record<string, string> = {
   "New Moon": "Планируй, закладывай намерения, медитируй. Это время для внутренней тишины.",
   "Waxing Crescent": "Ставь цели, визуализируй, делай первые шаги. Сила растёт.",
   "First Quarter": "Действуй решительно, преодолевай сомнения. Время пробиваться.",

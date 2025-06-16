@@ -6,10 +6,10 @@
       <img :src="moonImageUrl" alt="Фаза луны" class="lunar-phase-card__image" />
       <div class="lunar-phase-card__text">
         <div class="lunar-phase-card__name">
-          {{ moonPhases[phaseName] }}
+          {{ label }}
         </div>
         <div class="lunar-phase-card__note">
-             {{ moonTips[phaseName] }}
+          {{ tip }}
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { moonPhases, moonTips } from '@/data/moonPhases'
 import { fetchMoonPhase } from '@/services/lunarService'
 
@@ -25,6 +25,9 @@ const moonImageUrl = ref('')
 const phaseName = ref('')
 const loading = ref(true)
 const error = ref('')
+
+const label = computed(() => moonPhases[phaseName.value] || phaseName.value)
+const tip = computed(() => moonTips[phaseName.value] || '')
 
 onMounted(async () => {
   try {

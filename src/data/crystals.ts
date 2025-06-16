@@ -1,4 +1,9 @@
-export const crystals = {
+export const crystals: Record<string, {
+  image: string
+  name: string
+  description: string
+  howToUse: string
+}> = {
   "New Moon": {
     image: new URL('@/assets/images/turmaline.png', import.meta.url).href,
     name: "Чёрный турмалин",
