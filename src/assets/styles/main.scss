@@ -12,7 +12,11 @@
   display: none !important;
 }
   
- 
+.el-card__body {
+  display: flex;
+  flex-direction: column;
+}
+
 .el-card__body,
 .el-input__wrapper,
 .el-textarea__inner,

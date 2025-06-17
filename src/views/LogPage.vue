@@ -73,7 +73,7 @@ onMounted(async () => {
 .main-inner {
   display: flex;
   gap: 22px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .form-wrapper,
@@ -86,13 +86,15 @@ onMounted(async () => {
 }
 
 .form-wrapper {
-      min-width: 620px;
+  min-width: 620px;
+  max-width: 680px; 
+  flex-shrink: 0;
 }
 
 .dashboard-wrapper {
-    height: 410px;
-    display: block;
-    background-color: var(--color-white);
+  flex: 1 1 0;
+  display: block;
+  background-color: var(--color-white);
 }
 
 .information-block__row {
