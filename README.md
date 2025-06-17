@@ -40,13 +40,16 @@
 ![Screenshot_1](https://github.com/user-attachments/assets/20922698-fe14-4f1a-8a09-d549eeb9d99e)
 
 2. Выбор фокусов дня
-![Screenshot_2](https://github.com/user-attachments/assets/2c854d97-841d-4792-8ca1-0e6258461d36)
+![Screenshot_2](https://github.com/user-attachments/assets/b1c4ce1e-348d-4829-ae13-5332e3a86813)
 
-3. Доска задач на день
-![Screenshot_3](https://github.com/user-attachments/assets/2845dc2d-0974-4a7f-944a-bffbca1d870e)
 
-4. Трекер энергии и анализ дня
-![Screenshot_4](https://github.com/user-attachments/assets/f7e2ea41-70b0-48e7-a656-39d7d3cf49ea)
+4. Доска задач на день
+![Screenshot_3](https://github.com/user-attachments/assets/ff9d721c-9094-4e06-af1b-c9733b03c5a4)
+
+
+5. Трекер энергии и анализ дня
+6. ![Screenshot_4](https://github.com/user-attachments/assets/fbd95088-3609-4040-a3ef-0d53d86d73a2)
+
 
 *Когда вы заполните свой первый день, появится график энергии, а также рекомендации по лунному циклу и кристаллам.*
 
