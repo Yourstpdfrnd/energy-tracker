@@ -26,6 +26,13 @@ export const useUserStore = defineStore('user', {
     loadNameFromStorage() {
       this.name = localStorage.getItem(NAME_KEY) || ''
       this.userId = localStorage.getItem(STORAGE_KEY) || ''
+    },
+    
+    logout() {
+      this.userId = ''
+      this.name = ''
+      localStorage.removeItem(STORAGE_KEY)
+      localStorage.removeItem(NAME_KEY)
     }
   }
 })

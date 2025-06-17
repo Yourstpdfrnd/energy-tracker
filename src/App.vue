@@ -18,7 +18,7 @@
               <el-option label="RU" value="ru" />
               <el-option label="EN" value="en" />
             </el-select> -->
-            <!-- <button class="start-btn">Выход</button> -->
+           <button class="start-btn" @click="handleLogout">Выйти</button>
           </div>
         </div>
 
@@ -30,22 +30,17 @@
 
 <script setup lang="ts">
 import { ElConfigProvider } from 'element-plus'
-import { useI18n } from 'vue-i18n'
-import { watchEffect } from 'vue'
-
+import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/useUserStore'
 
-const { t, locale } = useI18n()
 const userStore = useUserStore()
+const router = useRouter()
 
-const switchLocale = (val: string) => {
-  locale.value = val
+const handleLogout = () => {
+  userStore.logout()
+  router.push('/') 
 }
 
-watchEffect(() => {
-  console.log('ACTIVE LOCALE:', locale.value)
-  console.log('t', t('plan.title'))
-})
 </script>
 
 
